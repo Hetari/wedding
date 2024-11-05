@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply text-primary-950 bg-primary-50;
+  }
+}
+
 @layer utilities {
   .heading-xxl {
     @apply text-[48px] md:text-[89px] lg:text-[134px];
