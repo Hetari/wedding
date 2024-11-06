@@ -1,7 +1,7 @@
 <template>
   <nav>
     <ul
-      class="link-inline mx-auto flex w-full items-center justify-between gap-6"
+      class="link-inline sm:link-nav mx-auto flex w-full items-center justify-between gap-6 sm:px-28"
     >
       <template v-for="(item, i) in navItems" :key="item.id">
         <MagneticEffect v-if="i === logoIndex" textId="logo-link" divId="logo">
@@ -11,7 +11,9 @@
             </a>
           </li>
         </MagneticEffect>
-        <li class="text-primary-950/60 text-nowrap">
+        <li
+          class="text-primary-950/60 hover:text-primary-950 text-nowrap transition-colors"
+        >
           <a :href="item.href">
             {{ item.label }}
           </a>

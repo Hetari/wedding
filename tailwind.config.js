@@ -2,6 +2,9 @@ export default {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        primary: ['Montaga'],
+      },
       colors: {
         primary: {
           50: '#fbf6f1',

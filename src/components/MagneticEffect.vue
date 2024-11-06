@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
   import { useWindowSize } from '@vueuse/core';
-  import { onMounted, onUnmounted, ref, Ref } from 'vue';
+  import { onMounted, onUnmounted, ref, Ref, watch } from 'vue';
   import gsap from 'gsap';
 
   const props = defineProps({
@@ -45,12 +45,23 @@
   const handleMouseLeave = () => {
     resetMagneto(magneto, magnetoTextRef);
   };
+  const isActive = ref(true);
 
   onMounted(() => {
     magneto = ref(document.getElementById(props.divId) as HTMLElement);
     magnetoTextRef = ref(document.getElementById(props.textId) as HTMLElement);
 
-    if (width.value > 700) {
+    isActive.value = true;
+    magneto.value.addEventListener('mousemove', handleMouseMove);
+    magneto.value.addEventListener('mouseleave', handleMouseLeave);
+  });
+
+  watch(width, (newVal: number) => {
+    if (newVal < 700 && isActive.value) {
+      isActive.value = false;
+      magneto.value.removeEventListener('mousemove', handleMouseMove);
+      magneto.value.removeEventListener('mouseleave', handleMouseLeave);
+    } else if (newVal >= 700 && !isActive.value) {
       magneto.value.addEventListener('mousemove', handleMouseMove);
       magneto.value.addEventListener('mouseleave', handleMouseLeave);
     }
