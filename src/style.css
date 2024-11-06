@@ -12,7 +12,7 @@
 
 @layer base {
   body {
-    @apply font-primary bg-primary-50 text-primary-950;
+    @apply font-primary overflow-x-clip bg-primary-50 text-primary-950;
   }
 }
 
