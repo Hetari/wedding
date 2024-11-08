@@ -1,10 +1,11 @@
 <template>
   <Hero />
+  <Story />
 </template>
 
 <script setup lang="ts">
   import { ScrollTrigger, gsap } from 'gsap/all';
-  import { Hero } from './sections';
+  import { Hero, Story } from './sections';
   import Lenis from 'lenis';
 
   const lenis = new Lenis();

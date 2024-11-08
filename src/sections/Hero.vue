@@ -1,5 +1,5 @@
 <template>
-  <!-- TODO: Add loading animation here -->
+  <!-- TODO: Make navbar responsive -->
   <div
     id="loading"
     class="fixed inset-0 z-[99999] bg-primary-50 text-primary-950"
@@ -37,7 +37,6 @@
       </div>
     </main>
   </div>
-  <div class="h-screen"></div>
 </template>
 
 <script setup lang="ts">
@@ -83,7 +82,6 @@
       },
     });
 
-    // Animate percent and trigger subsequent animations
     tl.to(
       percent,
       {
