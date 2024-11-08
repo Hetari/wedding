@@ -6,9 +6,9 @@
   >
     <div
       id="percent"
-      class="mt-[calc(100vh-2ch)] h-full ps-[5vw] text-[35vw] leading-none sm:text-[185px] lg:text-[200px]"
+      class="mt-[calc(100vh-2ch)] overflow-clip ps-[5vw] text-[35vw] leading-none sm:text-[185px] lg:text-[200px]"
     >
-      0%
+      <p id="percent-text" class="">0%</p>
     </div>
   </div>
   <div class="h-svh px-[5%] pt-6 lg:px-[10%]">
@@ -48,7 +48,7 @@
 
   const tl = gsap.timeline({
     defaults: {
-      duration: 1.5,
+      duration: 3,
       ease: 'power4.inOut',
     },
   });
@@ -64,55 +64,51 @@
       y: 0,
       duration: 1.5,
       ease: 'expo.inOut',
-      stagger: 0.1,
+      stagger: 0.05,
     });
   };
 
-  function countPercent() {
-    return (tl.progress() * 100).toFixed();
-  }
-
   tryOnMounted(() => {
-    //TODO: stop scroll when animation start by useScrollLock
-    const loading = document.getElementById('loading');
+    // Get DOM elements
+    const loading = document.getElementById('loading') as HTMLDivElement;
     const percent = document.getElementById('percent') as HTMLDivElement;
+    const percentText = document.getElementById(
+      'percent-text',
+    ) as HTMLDivElement;
 
-    // let y = 100;
-    tl.to(percent, {
-      delay: 0.5,
-      marginTop: 10,
+    // Update the percent text during animation
+    tl.to(percentText, {
       onUpdate() {
-        percent.innerHTML = (tl.progress() * 10).toFixed() + '0 %';
-      },
-      onComplete() {
-        //   console.log('y: ', -y * 1.75);
-        //   gsap.set(percent, {
-        //     yPercent: -y * 1.75,
-        //   });
-        //   gsap.set(percentSpan, {
-        //     yPercent: y,
-        //     textContent: y / 2 + '%',
-        //   });
-        //   tl.to(percentSpan, {
-        //     yPercent: 0,
-        //     duration: 0.5,
-        //     onComplete() {
-        //       if (y <= 150) {
-        //         y = y * 2;
-        //         tl.restart();
-        //       } else {
-        tl.to(loading, {
-          delay: 0.25,
-          yPercent: -100,
-          onStart() {
-            heroImageAnimation();
-          },
-        });
-        //       }
-        //     },
-        //   });
+        percentText.innerHTML = (tl.progress() * 10).toFixed() + '0 %';
       },
     });
+
+    // Animate percent and trigger subsequent animations
+    tl.to(
+      percent,
+      {
+        marginTop: 10,
+        onComplete: () => {
+          gsap.to(percentText, {
+            delay: 0.5,
+            opacity: 0,
+            duration: 1,
+            ease: 'power4.inOut',
+            onStart: () => {
+              gsap.to(loading, {
+                delay: 1,
+                duration: 1,
+                yPercent: -100,
+                onStart() {
+                  heroImageAnimation();
+                },
+              });
+            },
+          });
+        },
+      },
+      '<',
+    );
   });
 
   tryOnUnmounted(() => {
