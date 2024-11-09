@@ -6,12 +6,14 @@
     <img class="!m-0 !mx-auto !p-0" :src="breakLineSvg" alt="" />
     <Cards />
     <Team />
+    <img class="mx-auto" :src="breakLineSvg" alt="" />
+    <Form />
   </div>
 </template>
 
 <script setup lang="ts">
   import { ScrollTrigger, gsap } from 'gsap/all';
-  import { Hero, Story, Venue, Cards, Team } from './sections';
+  import { Hero, Story, Venue, Cards, Team, Form } from './sections';
   import Lenis from 'lenis';
   import { breakLineSvg } from './assets/images';
 

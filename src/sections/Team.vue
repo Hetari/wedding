@@ -12,8 +12,6 @@
       </template>
     </div>
   </div>
-
-  <div class="h-svh"></div>
 </template>
 
 <script setup lang="ts">
