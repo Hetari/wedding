@@ -9,6 +9,11 @@
 <script setup lang="ts">
   import { ref } from 'vue';
   import { Card } from '../components';
+  import { tryOnMounted } from '@vueuse/core';
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/all';
+
+  gsap.registerPlugin(ScrollTrigger);
 
   interface Card {
     id: number;
@@ -36,4 +41,21 @@
       button: 'button',
     },
   ]);
+
+  tryOnMounted(() => {
+    gsap.from('#cards div', {
+      scrollTrigger: {
+        trigger: '#cards',
+        start: 'top 75%',
+        end: 'top 25%',
+        scrub: true,
+      },
+      opacity: 0,
+      rotate: 7.5,
+      scale: 0.8,
+      y: 100,
+      stagger: 0.2,
+      duration: 1,
+    });
+  });
 </script>
