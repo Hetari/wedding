@@ -12,17 +12,14 @@
 </template>
 
 <script setup lang="ts">
-  import { ScrollTrigger, gsap } from 'gsap/all';
   import { Hero, Story, Venue, Cards, Team, Form } from './sections';
-  import Lenis from 'lenis';
   import { breakLineSvg } from './assets/images';
+  import { lenis } from './main';
+  import { ScrollTrigger, gsap } from 'gsap/all';
 
-  const lenis = new Lenis();
+  gsap.ticker.lagSmoothing(0);
   lenis.on('scroll', ScrollTrigger.update);
-
   gsap.ticker.add((time) => {
     lenis.raf(time * 1000);
   });
-
-  gsap.ticker.lagSmoothing(0);
 </script>
