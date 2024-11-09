@@ -9,10 +9,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @layer base {
   body {
-    @apply font-primary overflow-x-clip bg-primary-50 text-primary-950;
+    @apply overflow-x-clip bg-primary-50 font-primary text-primary-950;
   }
 }
 
