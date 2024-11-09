@@ -25,7 +25,7 @@
       ease: 'power4.inOut',
     },
   });
-  const loading = ref(false);
+  const loading = ref(true);
 
   const heroImageAnimation = () => {
     const imgContainer = document.getElementById('hero-img-container');
