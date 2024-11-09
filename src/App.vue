@@ -3,13 +3,7 @@
   <Story />
   <div class="space-y-[5%] px-[5%]">
     <Venue />
-    <div class="relative">
-      <img
-        class="absolute left-1/2 top-0 translate-x-[-50%] translate-y-[-100%]"
-        :src="breakLineSvg"
-        alt=""
-      />
-    </div>
+    <img class="!m-0 !mx-auto !p-0" :src="breakLineSvg" alt="" />
     <Cards />
   </div>
 </template>
