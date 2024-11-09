@@ -3,7 +3,7 @@
   <Story />
   <div class="space-y-[5%] px-[5%]">
     <Venue />
-    <img class="!m-0 !mx-auto !p-0" :src="breakLineSvg" alt="" />
+    <img class="!mx-auto !p-0" :src="breakLineSvg" alt="" />
     <Cards />
     <Team />
     <img class="mx-auto" :src="breakLineSvg" alt="" />

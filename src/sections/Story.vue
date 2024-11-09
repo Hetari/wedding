@@ -1,13 +1,10 @@
 <template>
-  <!-- TODO: Make this responsive -->
-  <div id="story" class="px-[15%] py-[10%]">
-    <div class="grid grid-cols-4 text-primary-50">
+  <div id="story" class="p-[10%]">
+    <div class="text-primary-50 md:grid md:grid-cols-3">
       <h1 class="heading-large col-span-1">
-        Our <br />
-        Story
+        Our <span class="md:block">Story</span>
       </h1>
-      <div class="col-span-1"></div>
-      <p class="text-medium col-span-2">
+      <p class="text-medium md:col-span-2">
         Feugiat pretium egestas enim blandit purus euismod. Feugiat magna
         aliquam lectus lectus eu amet. Eros, accumsan purus enim nascetur quam
         diam felis, fringilla varius. Quis purus nisl orci eu, ultrices. Purus

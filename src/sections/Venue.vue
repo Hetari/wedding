@@ -1,5 +1,8 @@
 <template>
-  <div id="venue" class="grid h-[75vh] grid-cols-4 gap-x-20">
+  <div
+    id="venue"
+    class="has-[75vh] mt-10 space-y-10 sm:grid sm:h-[50vh] sm:grid-cols-4 sm:gap-x-20 md:h-[65vh] lg:mt-0 lg:h-[75vh]"
+  >
     <div id="venue-text" class="col-span-2 place-content-center">
       <h2 class="heading-all-caps text-primary-500">The Venue</h2>
       <h3 class="heading-medium">Gino Winery Estate</h3>
@@ -18,7 +21,7 @@
     <div id="imgs" class="relative col-span-2 size-full">
       <template v-for="(img, i) in venueImages" :key="i">
         <img
-          class="absolute size-full object-contain"
+          class="absolute w-full object-contain sm:h-full"
           :style="`top: ${i === 2 ? 1 : -i}px`"
           :src="img"
           alt="venue image"

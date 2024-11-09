@@ -10,7 +10,7 @@
 
     <form class="mx-auto max-w-xl space-y-4 rounded-lg">
       <!-- Text Inputs -->
-      <div class="grid grid-cols-2 gap-4">
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <template v-for="input in textInputs" :key="input">
           <div
             class="col-span-1 flex flex-col"
@@ -59,9 +59,15 @@
         <h3 class="font-medium">
           Attendance<span class="text-red-500">*</span>
         </h3>
-        <div class="grid grid-cols-6 gap-2">
+        <div class="grid grid-cols-1 gap-2 sm:grid-cols-6">
           <template v-for="(option, index) in attendanceOptions" :key="index">
-            <div :class="index in [0, 1] ? 'col-span-3' : 'col-span-2'">
+            <div
+              :class="
+                index in [0, 1]
+                  ? 'grid-cols-1 sm:col-span-3'
+                  : 'grid-cols-1 sm:col-span-2'
+              "
+            >
               <label
                 class="flex cursor-pointer items-center justify-start space-x-2 border border-primary-950 py-3 pe-4 ps-2"
               >

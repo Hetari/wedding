@@ -1,14 +1,21 @@
 <template>
   <div id="team" class="space-y-10">
     <h1 class="heading-medium">The Bridal Party</h1>
-    <div id="team-cards" class="grid grid-cols-10 gap-x-20">
-      <div id="team-slug" class="text-large col-span-2">
+    <div
+      id="team-cards"
+      class="grid grid-cols-4 gap-10 lg:grid-cols-10 lg:gap-20"
+    >
+      <div id="team-slug" class="text-large col-span-full lg:col-span-2">
         <p>Make this day special</p>
         <p class="text-primary-500">for you and your family</p>
       </div>
 
       <template v-for="t in teamMembers" :key="t.id">
-        <TeamCard class="team-card col-span-2" :name="t.name" :img="t.img" />
+        <TeamCard
+          class="team-card col-span-2 sm:col-span-2 lg:col-span-2"
+          :name="t.name"
+          :img="t.img"
+        />
       </template>
     </div>
   </div>
