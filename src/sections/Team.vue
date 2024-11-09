@@ -22,7 +22,6 @@
   import { TeamCard } from '../components';
   import gsap from 'gsap';
   import { ScrollTrigger } from 'gsap/all';
-
   gsap.registerPlugin(ScrollTrigger);
 
   interface Team {
@@ -60,6 +59,7 @@
         start: 'top 65%',
         toggleActions: 'play none none reverse',
       },
+      ease: 'power1.out',
       rotate: 10,
       x: -50,
       y: 50,
@@ -75,6 +75,7 @@
         start: 'top 65%',
         toggleActions: 'play none none reverse',
       },
+      ease: 'power1.out',
       rotate: -2,
       filter: 'blur(10px)',
       scale: 0,

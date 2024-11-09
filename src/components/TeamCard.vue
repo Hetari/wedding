@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="img-container">
     <img class="w-full" :src="img" alt="person" />
     <h3 class="heading-x-small">{{ name }}</h3>
   </div>

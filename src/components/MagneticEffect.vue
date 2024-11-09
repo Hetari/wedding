@@ -48,8 +48,14 @@
   const isActive = ref(true);
 
   onMounted(() => {
-    magneto = ref(document.getElementById(props.divId) as HTMLElement);
-    magnetoTextRef = ref(document.getElementById(props.textId) as HTMLElement);
+    magneto = ref(
+      document.getElementById(props.divId) ||
+        (document.querySelector(props.divId) as HTMLElement),
+    );
+    magnetoTextRef = ref(
+      document.getElementById(props.textId) ||
+        (document.querySelector(props.textId) as HTMLElement),
+    );
 
     isActive.value = true;
     magneto.value.addEventListener('mousemove', handleMouseMove);
