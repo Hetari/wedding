@@ -1,5 +1,5 @@
 <template>
-  <div id="venue" class="grid h-[75vh] grid-cols-4 gap-x-20 p-[10%]">
+  <div id="venue" class="grid h-[75vh] grid-cols-4 gap-x-20 px-[5%] pt-[10%]">
     <div id="venue-text" class="col-span-2 place-content-center">
       <h2 class="heading-all-caps text-primary-500">The Venue</h2>
       <h3 class="heading-medium">Gino Winery Estate</h3>
@@ -41,11 +41,12 @@
       left: '100%',
       rotate: 15,
       stagger: 0.2,
+      ease: 'power4.inOut',
       scrollTrigger: {
         trigger: '#imgs',
         start: 'top bottom',
         end: 'center center',
-        scrub: true,
+        scrub: 1,
       },
     });
 
@@ -59,8 +60,7 @@
         trigger: '#venue-text',
         start: '85% bottom',
         end: '35% center',
-
-        scrub: true,
+        scrub: 1,
       },
     });
   });
