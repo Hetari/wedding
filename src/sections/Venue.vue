@@ -1,7 +1,7 @@
 <template>
   <div
     id="venue"
-    class="has-[75vh] mt-10 space-y-10 sm:grid sm:h-[50vh] sm:grid-cols-4 sm:gap-x-20 md:h-[65vh] lg:mt-0 lg:h-[75vh]"
+    class="mt-10 h-[75vh] space-y-10 overflow-x-clip sm:grid sm:h-[50vh] sm:grid-cols-4 sm:gap-x-20 md:h-[65vh] lg:mt-0 lg:h-[75vh]"
   >
     <div id="venue-text" class="col-span-2 place-content-center">
       <h2 class="heading-all-caps text-primary-500">The Venue</h2>

@@ -1,7 +1,7 @@
 <template>
   <div
     id="cards"
-    class="grid grid-cols-1 gap-20 py-[10%] sm:grid-cols-2 lg:grid-cols-3"
+    class="mt-20 grid grid-cols-1 gap-20 py-[10%] sm:grid-cols-2 lg:grid-cols-3"
   >
     <template v-for="c in cards" :key="c.id">
       <Card :card="c" />
