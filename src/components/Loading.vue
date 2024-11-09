@@ -2,7 +2,7 @@
   <div
     v-if="loading"
     id="loading"
-    class="fixed inset-0 z-[99999] bg-primary-50 text-primary-950"
+    class="fixed inset-0 z-[99999] h-screen bg-primary-50 text-primary-950"
   >
     <div
       id="percent"
@@ -41,6 +41,7 @@
       stagger: 0.05,
       onComplete() {
         loading.value = false;
+        window.scrollTo(0, 0);
       },
     });
   };
