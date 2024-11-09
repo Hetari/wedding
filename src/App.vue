@@ -1,15 +1,17 @@
 <template>
   <Hero />
   <Story />
-  <Venue />
-  <div class="relative py-[5%]">
-    <img
-      class="absolute left-1/2 top-[50%] translate-x-[-50%] translate-y-[-50%]"
-      :src="breakLineSvg"
-      alt=""
-    />
+  <div class="space-y-[5%] px-[5%]">
+    <Venue />
+    <div class="relative">
+      <img
+        class="absolute left-1/2 top-0 translate-x-[-50%] translate-y-[-100%]"
+        :src="breakLineSvg"
+        alt=""
+      />
+    </div>
+    <Cards />
   </div>
-  <Cards />
 </template>
 
 <script setup lang="ts">

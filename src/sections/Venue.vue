@@ -1,5 +1,5 @@
 <template>
-  <div id="venue" class="grid h-[75vh] grid-cols-4 gap-x-20 px-[5%] pt-[10%]">
+  <div id="venue" class="grid h-[75vh] grid-cols-4 gap-x-20">
     <div id="venue-text" class="col-span-2 place-content-center">
       <h2 class="heading-all-caps text-primary-500">The Venue</h2>
       <h3 class="heading-medium">Gino Winery Estate</h3>
